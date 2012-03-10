@@ -2,7 +2,7 @@ import sbt._
 import Keys._
 
 object MinimalBuild extends Build {
-  
+
   lazy val buildVersion =  "$play_mini_version$"
   
   lazy val typesafe = "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
@@ -15,5 +15,5 @@ object MinimalBuild extends Build {
     resolvers += typesafeSnapshot,
     libraryDependencies += "com.typesafe" %% "play-mini" % buildVersion,
     mainClass in (Compile, run) := Some("play.core.server.NettyServer")
-  )
+  ).settings(seq(AssemblyKeys.assemblySettings: _*))
 }
