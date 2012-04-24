@@ -1,6 +1,7 @@
 import sbt._
 import Keys._
 import sbtassembly.Plugin._
+import AssemblyKeys._
 
 object MinimalBuild extends Build {
 
@@ -16,5 +17,5 @@ object MinimalBuild extends Build {
     resolvers += typesafeSnapshot,
     libraryDependencies += "com.typesafe" %% "play-mini" % buildVersion,
     mainClass in (Compile, run) := Some("play.core.server.NettyServer")
-  ).settings(AssemblyKeys.assemblySettings: _*)
+  ).settings(assemblySettings: _*)
 }
