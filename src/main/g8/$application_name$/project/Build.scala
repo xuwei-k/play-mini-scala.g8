@@ -15,6 +15,7 @@ object MinimalBuild extends Build {
     organization := "$organization$",
     resolvers += typesafe,
     resolvers += typesafeSnapshot,
+    logManager <<= extraLoggers(com.typesafe.util.Sbt.logger),
     libraryDependencies += "com.typesafe" %% "play-mini" % buildVersion,
     mainClass in (Compile, run) := Some("play.core.server.NettyServer")
   ).settings(assemblySettings: _*)
