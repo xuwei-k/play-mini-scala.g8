@@ -23,6 +23,7 @@ trait ConfigureScalaBuild {
 
   def scalaMiniProject(org: String, name: String, buildVersion: String, baseFile: java.io.File = file(".")) = Project(id = name, base = baseFile, settings = Project.defaultSettings ++ assemblySettings).settings(
     version := buildVersion,
+    scalaVersion := "2.10.0",
     organization := org,
     resolvers += typesafe,
     resolvers += typesafeSnapshot,
