@@ -27,7 +27,6 @@ trait ConfigureScalaBuild {
     organization := org,
     resolvers += typesafe,
     resolvers += typesafeSnapshot,
-    logManager <<= extraLoggers(com.typesafe.util.Sbt.logger),
     libraryDependencies += "com.typesafe" %% "play-mini" % "$play_mini_version$",
     mainClass in (Compile, run) := netty,
     mainClass in assembly := netty,
